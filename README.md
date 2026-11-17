@@ -1,10 +1,10 @@
 # CAP_Presenter
 
+**English** | [한국어](README.ko.md)
+
 Mobile app that displays disaster alerts written in the **Common Alerting Protocol (CAP)**. It is the presenter part of a three-part system; the alert editor and the server are in [CAP_System](https://github.com/Minchan6847/CAP_System).
 
 Solo semester project for the Software System Lab course at the University of Seoul, September to December 2020.
-
-> 한국어 요약: CAP(Common Alerting Protocol) 재난경보를 표출하는 Flutter 모바일 앱입니다. 경보 작성 웹과 웹서버는 [CAP_System](https://github.com/Minchan6847/CAP_System)에 있습니다. 2020년 2학기 서울시립대학교 소프트웨어시스템실습 과목의 개인 프로젝트입니다.
 
 ## What it does
 
