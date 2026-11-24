@@ -1,0 +1,40 @@
+name: Flutter CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  analyze-and-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # pubspec.lock pins Dart ">=2.10.0 <2.11.0", so the project needs
+      # Flutter 1.22.x. Newer Flutter (Dart 3) cannot resolve these packages.
+      - name: Set up Flutter 1.22.6
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '1.22.6'
+          channel: stable
+          cache: true
+
+      - name: Show Flutter version
+        run: flutter --version
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      # Fail only on errors for now; infos and warnings are reported but
+      # do not break the build in this legacy codebase.
+      - name: Analyze
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings
+
+      - name: Run tests
+        run: flutter test
