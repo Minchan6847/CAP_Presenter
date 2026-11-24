@@ -241,9 +241,9 @@ class CAPDetailPage extends StatelessWidget {
         ],
       ),
     );
-
-    Color color = Theme.of(context).primaryColor;
 /*
+    Color color = Theme.of(context).primaryColor;
+
     Widget buttonSection = Container(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
